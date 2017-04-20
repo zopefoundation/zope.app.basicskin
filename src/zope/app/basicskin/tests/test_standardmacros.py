@@ -17,22 +17,21 @@ import unittest
 
 from zope.component import getGlobalSiteManager
 from zope.component.testing import PlacelessSetup
-from zope.interface import implements, Interface
+from zope.interface import implementer, Interface
 from zope.publisher.browser import TestRequest
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from zope.app.basicskin.standardmacros import Macros
 
-
+@implementer(IBrowserView)
 class ViewWithMacros(object):
-    implements(IBrowserView)
 
     def __init__(self, context, request):
         self.context = context
         self.request = request
 
-    def __call__(self):
+    def __call__(self): # pragma: no cover
         pass
 
     def __getitem__(self, key):
@@ -42,8 +41,9 @@ class ViewWithMacros(object):
 
 class I(Interface): pass
 
+@implementer(I)
 class C(object):
-    implements(I)
+    pass
 
 class page1(ViewWithMacros):
     pages = {'foo':'page1_foo',
@@ -111,8 +111,4 @@ class Test(PlacelessSetup, unittest.TestCase):
 
 
 def test_suite():
-    loader = unittest.TestLoader()
-    return loader.loadTestsFromTestCase(Test)
-
-if __name__=='__main__':
-    unittest.TextTestRunner().run(test_suite())
+    return unittest.defaultTestLoader.loadTestsFromName(__name__)

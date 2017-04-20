@@ -15,16 +15,21 @@
 
 The macros are drawn from various different page templates.
 """
+from __future__ import print_function, absolute_import, division
+
 __docformat__ = 'restructuredtext'
-import zope.interface
+
+from zope.interface import implementer
+from zope.interface.common.mapping import IItemMapping
 
 from zope.component import getMultiAdapter
 from zope.publisher.browser import BrowserView
 
+@implementer(IItemMapping)
 class Macros(object):
-    zope.interface.implements(zope.interface.common.mapping.IItemMapping)
 
-    macro_pages = ()    
+
+    macro_pages = ()
     aliases = {
         'view': 'page',
         'dialog': 'page',
