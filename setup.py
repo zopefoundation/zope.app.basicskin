@@ -53,7 +53,7 @@ setup(name='zope.app.basicskin',
           'Natural Language :: English',
           'Operating System :: OS Independent',
           'Topic :: Internet :: WWW/HTTP',
-          'Framework :: Zope3'
+          'Framework :: Zope :: 3'
       ],
       url='http://pypi.python.org/pypi/zope.app.basicskin',
       license='ZPL 2.1',
