@@ -24,6 +24,7 @@ from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 from zope.app.basicskin.standardmacros import Macros
 
+
 @implementer(IBrowserView)
 class ViewWithMacros(object):
 
@@ -31,7 +32,7 @@ class ViewWithMacros(object):
         self.context = context
         self.request = request
 
-    def __call__(self): # pragma: no cover
+    def __call__(self):  # pragma: no cover
         pass
 
     def __getitem__(self, key):
@@ -39,23 +40,30 @@ class ViewWithMacros(object):
 
     pages = {}
 
-class I(Interface): pass
 
-@implementer(I)
+class Iface(Interface):
+    pass
+
+
+@implementer(Iface)
 class C(object):
     pass
 
+
 class page1(ViewWithMacros):
-    pages = {'foo':'page1_foo',
-             'bar':'page1_bar'}
+    pages = {'foo': 'page1_foo',
+             'bar': 'page1_bar'}
+
 
 class collides_with_page1(ViewWithMacros):
-    pages = {'foo':'collides_with_page1_foo',
-             'baz':'collides_with_page1_baz'}
+    pages = {'foo': 'collides_with_page1_foo',
+             'baz': 'collides_with_page1_baz'}
+
 
 class works_with_page1(ViewWithMacros):
-    pages = {'fish':'works_with_page1_fish',
-             'tree':'works_with_page1_tree'}
+    pages = {'fish': 'works_with_page1_fish',
+             'tree': 'works_with_page1_tree'}
+
 
 def createMacrosInstance(pages):
 
@@ -79,9 +87,9 @@ class Test(PlacelessSetup, unittest.TestCase):
 
     def setUp(self):
         PlacelessSetup.setUp(self)
-        browserView(I, 'page1', page1)
-        browserView(I, 'collides_with_page1', collides_with_page1)
-        browserView(I, 'works_with_page1',  works_with_page1)
+        browserView(Iface, 'page1', page1)
+        browserView(Iface, 'collides_with_page1', collides_with_page1)
+        browserView(Iface, 'works_with_page1', works_with_page1)
 
     def testSinglePage(self):
         macros = createMacrosInstance(('page1',))
