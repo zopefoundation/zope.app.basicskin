@@ -30,7 +30,7 @@ def read(*rnames):
 
 setup(name='zope.app.basicskin',
       version=version,
-      author='Zope Corporation and Contributors',
+      author='Zope Foundation and Contributors',
       author_email='zope-dev@zope.org',
       description='Zope ZMI Basic Skin',
       long_description=(
@@ -58,7 +58,7 @@ setup(name='zope.app.basicskin',
           'Topic :: Internet :: WWW/HTTP',
           'Framework :: Zope :: 3'
       ],
-      url='http://pypi.python.org/pypi/zope.app.basicskin',
+      url='https://github.com/zopefoundation/zope.app.basicskin',
       license='ZPL 2.1',
       packages=find_packages('src'),
       package_dir={'': 'src'},
