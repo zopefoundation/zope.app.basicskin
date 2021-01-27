@@ -25,16 +25,16 @@ from zope.interface.common.mapping import IItemMapping
 from zope.component import getMultiAdapter
 from zope.publisher.browser import BrowserView
 
+
 @implementer(IItemMapping)
 class Macros(object):
-
 
     macro_pages = ()
     aliases = {
         'view': 'page',
         'dialog': 'page',
         'addingdialog': 'page'
-        }
+    }
 
     def __getitem__(self, key):
         key = self.aliases.get(key, key)
@@ -49,6 +49,7 @@ class Macros(object):
             else:
                 return v
         raise KeyError(key)
+
 
 class StandardMacros(BrowserView, Macros):
     macro_pages = ('view_macros', 'dialog_macros')

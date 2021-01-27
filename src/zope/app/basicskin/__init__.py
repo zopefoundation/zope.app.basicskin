@@ -16,6 +16,7 @@
 __docformat__ = 'restructuredtext'
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
+
 class IBasicSkin(IDefaultBrowserLayer):
     """Basic skin that simply only contains the default layer and
     nothing else"""
