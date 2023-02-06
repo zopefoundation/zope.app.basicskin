@@ -20,7 +20,7 @@
 """
 from setuptools import setup, find_packages
 import os
-version = '4.1.0.dev0'
+version = '5.0.dev0'
 
 
 def read(*rnames):
