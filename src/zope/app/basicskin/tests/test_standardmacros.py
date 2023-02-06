@@ -17,7 +17,8 @@ import unittest
 
 from zope.component import getGlobalSiteManager
 from zope.component.testing import PlacelessSetup
-from zope.interface import implementer, Interface
+from zope.interface import Interface
+from zope.interface import implementer
 from zope.publisher.browser import TestRequest
 from zope.publisher.interfaces.browser import IBrowserView
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
@@ -26,7 +27,7 @@ from zope.app.basicskin.standardmacros import Macros
 
 
 @implementer(IBrowserView)
-class ViewWithMacros(object):
+class ViewWithMacros:
 
     def __init__(self, context, request):
         self.context = context
@@ -46,7 +47,7 @@ class Iface(Interface):
 
 
 @implementer(Iface)
-class C(object):
+class C:
     pass
 
 

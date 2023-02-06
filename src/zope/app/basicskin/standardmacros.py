@@ -19,15 +19,14 @@ The macros are drawn from various different page templates.
 
 __docformat__ = 'restructuredtext'
 
+from zope.component import getMultiAdapter
 from zope.interface import implementer
 from zope.interface.common.mapping import IItemMapping
-
-from zope.component import getMultiAdapter
 from zope.publisher.browser import BrowserView
 
 
 @implementer(IItemMapping)
-class Macros(object):
+class Macros:
 
     macro_pages = ()
     aliases = {
