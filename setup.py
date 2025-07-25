@@ -20,11 +20,10 @@
 """
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
-version = '5.2.dev0'
+version = '6.0.dev0'
 
 
 def read(*rnames):
@@ -63,9 +62,6 @@ setup(name='zope.app.basicskin',
       ],
       url='https://github.com/zopefoundation/zope.app.basicskin',
       license='ZPL-2.1',
-      packages=find_packages('src'),
-      package_dir={'': 'src'},
-      namespace_packages=['zope', 'zope.app'],
       python_requires='>=3.9',
       install_requires=['setuptools',
                         'zope.component',
@@ -75,7 +71,7 @@ setup(name='zope.app.basicskin',
       extras_require=dict(
           test=[
               'zope.component [test]',
-              'zope.testrunner',
+              'zope.testrunner >= 6.4',
           ]),
       include_package_data=True,
       zip_safe=False,
