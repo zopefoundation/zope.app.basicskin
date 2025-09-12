@@ -37,9 +37,9 @@ setup(name='zope.app.basicskin',
       author_email='zope-dev@zope.dev',
       description='Zope ZMI Basic Skin',
       long_description=(
-          read('README.txt')
+          read('README.rst')
           + '\n\n' +
-          read('CHANGES.txt')
+          read('CHANGES.rst')
       ),
       keywords="zope3 skin zmi",
       classifiers=[
