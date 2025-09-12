@@ -23,7 +23,7 @@ import os
 from setuptools import setup
 
 
-version = '6.0.dev0'
+version = '6.0'
 
 
 def read(*rnames):
