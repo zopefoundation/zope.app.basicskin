@@ -2,16 +2,16 @@
  *
  * Copyright (c) 2001, 2002 Zope Foundation and Contributors.
  * All Rights Reserved.
- * 
+ *
  * This software is subject to the provisions of the Zope Public License,
  * Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
  * THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
  * WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
  * FOR A PARTICULAR PURPOSE.
- * 
+ *
  *****************************************************************************
- 
+
  These are the basic CSS declarations.
 */
 
@@ -100,7 +100,7 @@ h6 {
     font-size: 1.0em;
 }
 
-ul { 
+ul {
 /*    list-style-image: url("bullet.gif"); */
     margin-top: 1em;
     margin-bottom: 1em;
@@ -131,7 +131,7 @@ form {
 textarea {
 /* Small cosmetic hack which makes textarea gadgets look nicer.*/
     font: bold 1em Tahoma, Helvetica, Arial, sans-serif;
-    border: 1px solid #8cacbb;  
+    border: 1px solid #8cacbb;
     width: 100%;
     color: Black;
     background-color: white;
