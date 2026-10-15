@@ -13,4 +13,3 @@
   <div metal:use-macro="context/@@standard_macros/footer" />
 </body>
 </html>
-
